@@ -45,7 +45,7 @@ class DataIngestion:
                 self.ingestion_config.test_data_path
             )
         except Exception as e:
-            return CustomException(e,sys)
+            raise CustomException(e,sys)
 
 if __name__ == '__main__':
     obj = DataIngestion()
@@ -59,5 +59,5 @@ if __name__ == '__main__':
     print("==========model trainer started =================")
     model_trainer = ModelTrainer()
     print(model_trainer.initiate_model_trainer(train_arr,test_arr))
-    
+    print("============model trainer ended===============")
 
